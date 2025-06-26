@@ -1,5 +1,5 @@
-import { Dam-TaskApp } from '';
+import { DamTasksApp } from '@/components/task-zen-app';
 
 export default function Home() {
-  return <Dam-TaskApp />;
+  return <DamTasksApp />;
 }

@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { ThemeProvider } from '';
-import { Toaster } from '';
-import { TaskProvider } from '';
+import { ThemeProvider } from '@/components/providers/theme-provider';
+import { Toaster } from '@/components/ui/toaster';
+import { TaskProvider } from '@/components/providers/task-provider';
 
 export const metadata: Metadata = {
-  title: 'Dam-Task',
+  title: 'Dam-Tasks',
   description: 'Manage your tasks with AI-powered suggestions.',
 };
 
