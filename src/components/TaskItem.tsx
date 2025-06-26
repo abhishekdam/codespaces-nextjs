@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Trash2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { Badge } from './ui/badge';
 import { motion } from 'framer-motion';
 
 interface TaskItemProps extends React.HTMLAttributes<HTMLLIElement> {
@@ -30,7 +29,7 @@ const TaskItemWithRef = forwardRef<HTMLLIElement, TaskItemProps>(
         ref={ref}
         layoutId={task.id}
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: isDragging ? 0 : 1, y: 0 }}
+        animate={{ opacity: isDragging ? 0.3 : 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
         className={cn(
@@ -51,7 +50,7 @@ const TaskItemWithRef = forwardRef<HTMLLIElement, TaskItemProps>(
           onClick={(e) => e.stopPropagation()}
           onPointerDown={(e) => e.stopPropagation()}
         />
-        <div className="flex-1 space-y-2">
+        <div className="flex-1">
           <div
             className={cn(
               'font-medium transition-all',
@@ -60,15 +59,6 @@ const TaskItemWithRef = forwardRef<HTMLLIElement, TaskItemProps>(
           >
             {task.text}
           </div>
-          {task.tags.length > 0 && (
-            <div className="flex flex-wrap gap-2">
-              {task.tags.map((tag) => (
-                <Badge key={tag} variant="secondary">
-                  {tag}
-                </Badge>
-              ))}
-            </div>
-          )}
         </div>
         <Button
           variant="ghost"
