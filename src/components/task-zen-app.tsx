@@ -45,7 +45,7 @@ export function DamTasksApp() {
         )}
       </main>
       <footer className="text-center py-4 text-muted-foreground text-sm flex-shrink-0">
-        <p>Streamline your day with Dam-Tasks.</p>
+        <p>All rights of the project "Dam-Tasks" belongs to Abhishek Dam. </p>
       </footer>
     </div>
   );
